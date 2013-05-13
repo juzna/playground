@@ -1,0 +1,40 @@
+HOST: http://dummyshop.juzna.cz/api/v1
+
+--- So that you can communicate with my shop ---
+
+---
+Trala lala description
+---
+
+--
+Orders
+--
+
+BO-J-01: List all open orders
+GET /orders?status=open
+< 200
+< Content-Type: application/json
+{ "orders": [
+    {
+        "orderNumber": "ABC-123",
+        "status": "new",
+        "isPaid": true,
+        "invoiceAddress": {
+            // ...
+        },
+        "deliveryAddress": {
+            "sameAsInvoiceAddress": true,
+            // ...
+        },
+        "price": 256.0,
+        "items": [
+            {
+                "type": "product",
+                "id": 11,
+                "name": "MacBook Pro"
+                "price": 128.15
+            }
+        ]
+    }
+] }
+
